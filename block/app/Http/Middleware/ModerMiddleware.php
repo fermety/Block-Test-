@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\User;
 
-class AdminMiddleware
+class ModerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ((int) auth()->user()->role !== User::ROLE_ADMIN) {
-            abort(404);
+        if ((int) auth()->user()->role == User::ROLE_ADMIN) {
+            return redirect('/admin');
         }
         return $next($request);
     }

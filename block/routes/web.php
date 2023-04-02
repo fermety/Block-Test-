@@ -52,11 +52,10 @@ use App\Http\Controllers\Moder\Post\ModerDeletePostController;
 |
 */
 
-Route::name('main.')->group(function() {
-    Route::get('/', IndexController::class);
-});
 
-Route::prefix('moder')->middleware('auth')->group(function (){
+Route::get('/', IndexController::class)->name('main.index');
+
+Route::prefix('moder')->middleware('auth','moder')->group(function (){
     Route::get('/', ModerController::class)->name('moder.main.index');
 
     Route::prefix('post')->group(function() {

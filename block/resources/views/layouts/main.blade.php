@@ -14,10 +14,11 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Блог</a>
+                            <a class="nav-link" href="{{ route('main.index') }}">Блог</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Войти</a>
+                            <a class="nav-link" name="admin" href="{{ route('moder.main.index') }}" >Войти</a>
+
                         </li>
                     </ul>
                 </div>
