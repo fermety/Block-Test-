@@ -16,7 +16,7 @@ class StorePostController extends BasePostController
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $this->sevice->store($data);
+        $this->service->store($data);
 
         return redirect()->route('admin.post');
     }
