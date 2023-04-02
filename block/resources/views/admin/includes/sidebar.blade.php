@@ -6,6 +6,14 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
+                <a href="{{ route('admin.post') }}" class="nav-link">
+                    <i class="nav-icon far fa-clipboard"></i>
+                    <p>
+                        Посты
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('admin.category') }}" class="nav-link">
                 <i class="nav-icon fas fa-th-list"></i>
                 <p>
@@ -13,6 +21,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.tag') }}" class="nav-link">
+                  <i class="nav-icon fas fa-tags"></i>
+                  <p>
+                    Теги
+                  </p>
+                </a>
+              </li>
         </ul>
     </div>
     <!-- /.sidebar -->
