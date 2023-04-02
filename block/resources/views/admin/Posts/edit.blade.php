@@ -28,12 +28,7 @@
             <form action="{{ route('admin.post.update', $post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                    <label class="form-check-label">Скрыть пост</label>
-                    </div>
-                </div>
+
                 <div class="form-group w-25">
                     <input type="text" class="form-control" name="title" placeholder="Название поста"
                     value="{{ $post->title }}">

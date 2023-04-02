@@ -17,11 +17,12 @@
                     </a>
                 </div>
                 @endforeach
-                <div>
+                <div class="pag">
                     {{ $posts->links() }}
                 </div>
             </div>
         </section>
     </div>
 </main>
+
 @endsection

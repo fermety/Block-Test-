@@ -38,7 +38,7 @@
                           <tr>
                             <th>ID</th>
                             <th>Название</th>
-                            <th colspan="3" class="text-center">Действия</th>
+                            <th colspan="4" class="text-center">Действия</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -59,6 +59,7 @@
                                 </td>
                             </tr>
                             @endforeach
+
                         </tbody>
                       </table>
                     </div>

@@ -40,12 +40,7 @@
                         <div class="text-danger">Это поле необходимо заполнить</div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                    <label class="form-check-label">Скрыть пост</label>
-                    </div>
-                </div>
+
                 <div class="form-group w-50">
                     <label for="exampleInputFile">Добавить превью</label>
                     <div class="input-group">
