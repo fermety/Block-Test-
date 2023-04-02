@@ -52,7 +52,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-    @include('admin.includes.sidebar')
+    @include('moder.includes.sidebar')
     @yield('content')
 
   <footer class="main-footer">

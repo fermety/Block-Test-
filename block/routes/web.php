@@ -32,7 +32,14 @@ use App\Http\Controllers\Admin\User\ShowUserController;
 use App\Http\Controllers\Admin\User\EditUserController;
 use App\Http\Controllers\Admin\User\UpdateUserController;
 use App\Http\Controllers\Admin\User\DeleteUserController;
-
+use App\Http\Controllers\Moder\Main\ModerController;
+use App\Http\Controllers\Moder\Post\ModerPostController;
+use App\Http\Controllers\Moder\Post\ModerCreatePostController;
+use App\Http\Controllers\Moder\Post\ModerStorePostController;
+use App\Http\Controllers\Moder\Post\ModerShowPostController;
+use App\Http\Controllers\Moder\Post\ModerEditPostController;
+use App\Http\Controllers\Moder\Post\ModerUpdatePostController;
+use App\Http\Controllers\Moder\Post\ModerDeletePostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +56,22 @@ Route::name('main.')->group(function() {
     Route::get('/', IndexController::class);
 });
 
-Route::prefix('admin')->group(function (){
-    Route::name('main')->group(function() {
-        Route::get('/', AdminController::class);
+Route::prefix('moder')->middleware('auth')->group(function (){
+    Route::get('/', ModerController::class)->name('moder.main.index');
+
+    Route::prefix('post')->group(function() {
+        Route::get('/', ModerPostController::class)->name('moder.post');
+        Route::get('/create', ModerCreatePostController::class)->name('moder.post.create');
+        Route::post('/', ModerStorePostController::class)->name('moder.post.store');
+        Route::get('/{post}', ModerShowPostController::class)->name('moder.post.show');
+        Route::get('/{post}/edit', ModerEditPostController::class)->name('moder.post.edit');
+        Route::patch('/{post}', ModerUpdatePostController::class)->name('moder.post.update');
+        Route::delete('/{post}', ModerDeletePostController::class)->name('moder.post.delete');
     });
+});
+
+Route::prefix('admin')->middleware('auth','admin')->group(function (){
+    Route::get('/', AdminController::class)->name('admin.main.index');
 
     Route::prefix('post')->group(function() {
         Route::get('/', PostController::class)->name('admin.post');

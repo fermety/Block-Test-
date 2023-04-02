@@ -11,8 +11,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -71,7 +70,7 @@
 
                     @error('main_image')
                     <div class="text-danger">Это поле необходимо заполнить</div>
-                @enderror
+                    @enderror
                 </div>
                 <div class="form-group w-50">
                     <label>Выберите категорию</label>

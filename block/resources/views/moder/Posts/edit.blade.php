@@ -1,4 +1,4 @@
- @extends('admin.layouts.main')
+ @extends('moder.layouts.main')
  @section('content')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,7 +25,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-12">
-            <form action="{{ route('admin.post.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('moder.post.update', $post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="form-group w-25">
